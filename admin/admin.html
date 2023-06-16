@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-robot"></i> CyberSoft</a>
+
+            <!-- Links -->
+            <ul class="navbar-nav d-flex menu">
+                <li class="nav-item ">
+                    <a class="nav-link" href="../index.html">
+                        <i class="fa-solid fa-house navbar-brand icon"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" href="../customer/views/customer.html">
+                        <i class="fa-solid fa-store navbar-brand icon"></i>
+                        Store
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa-solid fa-cart-shopping navbar-brand icon"></i>
+                        Cart
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+    </header>
+
+    <div class="body">
+        <div class="container">
+            <h2 class="d-flex justify-content-between">
+                Phone Management
+                <button id="addPhone" class="btn btn-info" data-toggle="modal" data-target="#myModal">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    Add Phone
+                </button>
+            </h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Photo</th>
+                        <th>Discription</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Model -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 id="modalHeader" class="modal-title">Phone Management</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Tên Sản Phẩm</label>
+                        <input id="TenSP" class="form-control" placeholder="Nhập vào tên sản phẩm" />
+                        <div id="errorTenSP" style="display: none" class="text-danger" >(*) Không được để trống !!!</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Thương Hiệu</label>
+                        <select class="custom-select" id="ThuongHieu">
+                            <option selected>Choose...</option>
+                            <option value="1">Apple</option>
+                            <option value="2">Samsung</option>
+                          </select>
+                          <div id="errorThuongHieu" style="display: none" class="text-danger" >(*) Không được để trống !!!</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Giá</label>
+                        <input id="GiaSP" class="form-control" placeholder="Nhập vào giá" />
+                        <div id="errorGiaSP" style="display: none" class="text-danger" >(*) Không được để trống !!!</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Screen</label>
+                        <input id="Screen" class="form-control" placeholder="Nhập vào Screen" />
+                        <div id="errorScreen" style="display: none" class="text-danger" >(*) Không được để trống !!!</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Back Camera</label>
+                        <input id="BackCamera" class="form-control" placeholder="Nhập vào Back Camera" />
+                        <div id="errorBackCamera" style="display: none" class="text-danger" >(*) Không được để trống !!!</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Front Camera</label>
+                        <input id="FrontCamera" class="form-control" placeholder="Nhập vào Front Camera" />
+                        <div id="errorFrontCamera" style="display: none" class="text-danger" >(*) Không được để trống !!!</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Hình Ảnh</label>
+                        <input id="HinhSP" class="form-control" placeholder="Nhập vào link hình ảnh" />
+                        <div id="errorHinhSP" style="display: none" class="text-danger" >(*) Không được để trống !!!</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Mô tả: </label>
+                        <textarea class="form-control" name="" id="MoTa" cols="30" rows="10"></textarea>
+                        <div id="errorMoTa" style="display: none" class="text-danger" >(*) Không được để trống !!!</div>
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button id="modalAdd" type="button" class="btn btn-info">Add Phone</button>
+                    <button id="modalUpdate" type="button" class="btn btn-warning">Update Phone</button>
+                    <button id="modalClose" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- Axios  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+        integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+    <!-- Main JS  -->
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>

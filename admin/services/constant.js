@@ -1,0 +1,1 @@
+export const DOMAIN = "https://64709e433de51400f724a0d2.mockapi.io";

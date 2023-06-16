@@ -1,0 +1,23 @@
+.container {
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-img-top1 {
+    background-image: url(../img/admin.jpeg);
+    background-size: cover;
+    height: 358px;
+}
+
+.card-img-top2 {
+    background-image: url(../img/cart.jpeg);
+    background-size: cover;
+    height: 358px;
+}
+
+.card {
+    width: 400px;
+}
